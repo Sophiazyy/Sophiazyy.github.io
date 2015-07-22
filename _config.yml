@@ -5,8 +5,8 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
+title:               Sophia Zhang
+tagline:             learning by doing
 url:                 http://getpoole.com
 paginate:            1
 baseurl:             ""
@@ -20,7 +20,7 @@ sass:
 
 # About/contact
 author:
-  name:              Mark Otto
+  name:              Sophia Zhang
   url:               https://twitter.com/mdo
   email:             markdotto@gmail.com
 
