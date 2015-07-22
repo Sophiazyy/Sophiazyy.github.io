@@ -29,7 +29,4 @@ version:             2.0.0
 github:
   repo:              https://github.com/poole/poole
 
-page_list:
-    About:'/about'
-    Archieve:'/archive'
-    Feed:'/atom.xml'
+page_list:          ['About', 'Archive']
