@@ -4,6 +4,7 @@ title: "How to Prepare PMI-PMP exam 2"
 icon: user
 categories: ['1-Management', '2-PMP']
 tags: ['PMP']
+comments: true
 excerpt_separator: <!-- more -->
 ---
 

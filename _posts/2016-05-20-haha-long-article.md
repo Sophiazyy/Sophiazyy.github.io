@@ -4,6 +4,7 @@ title: "HaHa"
 icon: user
 categories: ['1-Management', '2-Agile']
 tags: ['Agile']
+comments: true
 excerpt_separator: <!-- more -->
 ---
 

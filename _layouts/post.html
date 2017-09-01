@@ -1,18 +1,12 @@
 ---
 layout: default
 ---
-
 <article class="container mt-3" itemscope itemtype="http://schema.org/BlogPosting">
 <div class="post-content" itemprop="articleBody">
 
     {{ content }}
 </div>
-
-
 </article>
-{{jekyll.environment}}
-  {% include disqus_comments.html %}
 {% if site.disqus.shortname %}
-{{ "yes"}}
   {% include disqus_comments.html %}
 {% endif %}

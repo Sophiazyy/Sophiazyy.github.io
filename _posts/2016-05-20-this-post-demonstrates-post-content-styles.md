@@ -6,6 +6,7 @@ categories: ['1-Design', '2-Web Design']
 tags: ['Web Design']
 author: "Bart Simpson"
 meta: "Springfield"
+comments: true
 excerpt_separator: <!-- more -->
 ---
 
