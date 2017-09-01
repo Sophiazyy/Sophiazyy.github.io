@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="row">
   <div class="col-lg-2 container mt-3">
     {% include categories.html %}
@@ -11,7 +10,6 @@ layout: default
     <ul class="list-unstyled">
       {% for post in site.posts %}
         <li>
-
           <div class="media">
             <div class="d-flex mr-3">
               <i class="fa fa-{{ post.icon}} fa-3x fa-fw" aria-hidden="true"></i>
@@ -22,10 +20,6 @@ layout: default
               {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
               <span style="padding-right: 3em"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: date_format }}</span>
               <span style="padding-right: 3em"> <i class="fa fa-hashtag" aria-hidden="true"></i> {{ post.tags }}</span>
-              <span style="padding-right: 3em"> <i class="fa fa-comment" aria-hidden="true"></i>
-                  <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
-              </span>
-
             </div>
           </div>
         </li>

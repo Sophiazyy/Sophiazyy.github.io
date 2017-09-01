@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
   {% include head.html %}
-
   <body>
-
-      {% include header.html %}
-      <div class="jumbotron jumbotron-fluid" style="margin-top:60px;">
-        <div class="container">
-        <h1 class="display-3">{{ page.title | escape }}</h1>
-          {% if page.date %}
-          <p class="lead">
-            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-            <span style="padding-right: 3em"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: date_format }}</span>
-            <span style="padding-right: 3em"> <i class="fa fa-hashtag" aria-hidden="true"></i> {{ page.tags }}</span>
-            <span style="padding-right: 3em"> <i class="fa fa-comment" aria-hidden="true"></i>
-              {% if page.comments %}
-                <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
-              {% endif %}
-            </span>
-
-
-          </p>
-          {% else %}
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          {% endif %}
-        </div>
+    {% include header.html %}
+    <div class="jumbotron jumbotron-fluid" style="margin-top:60px;">
+      <div class="container">
+      <h1 class="display-3">{{ page.title | escape }}</h1>
+        {% if page.date %}
+        <p class="lead">
+          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+          <span style="padding-right: 3em"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: date_format }}</span>
+          <span style="padding-right: 3em"> <i class="fa fa-hashtag" aria-hidden="true"></i> {{ page.tags }}</span>
+          <span style="padding-right: 3em"> <i class="fa fa-comment" aria-hidden="true"></i>
+            {% if page.comments %}
+              <a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
+            {% endif %}
+          </span>
+        </p>
+        {% else %}
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        {% endif %}
       </div>
-<div class="container" style=" margin-bottom:100px">
+    </div>
+    <div class="container" style=" margin-bottom:100px">
       <main class="page-content" aria-label="Content">
-
-          {{ content }}
-        </div>
+        {{ content }}
       </main>
-  </div>
+    </div>
   </body>
-
 </html>

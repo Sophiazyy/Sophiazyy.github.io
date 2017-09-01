@@ -2,25 +2,12 @@
 layout: default
 ---
 <article class="container mt-3" itemscope itemtype="http://schema.org/BlogPosting">
-<div class="post-content" itemprop="articleBody">
-
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
-</div>
+  </div>
 </article>
-{% if site.disqus.shortname %}
-  {% include disqus_comments.html %}
-{% endif %}
-
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'learning-to-learn-disqus'; // required: replace example with your forum shortname
-    // var disqus_developer = 1; // Comment out when the site is live
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-      var s = document.createElement('script'); s.async = true;
-      s.type = 'text/javascript';
-      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
+<div class="container mt-3">
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</div>

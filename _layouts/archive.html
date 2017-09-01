@@ -1,41 +1,38 @@
 ---
 layout: default
 ---
-
 <main role="main">
-<article class="containter mt-3">
- <article role="article">
-        <header>
-             <ul class="tag-cloud">
-               {% capture site_categories %}{% for tag in site.categories %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-               {% assign sortedTags = site_categories | split:',' %}
-                {% for tag in sortedTags %}
-                {% assign levels = tag | split:'-' %}
-                  {% if levels[0] == '2' %}
-                  <a href="#{{ levels[1] | cgi_escape }}" class="badge badge-success">  {{ levels[1] }} {{ site.categories[tag].size }} </a>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </header>
-        <hr>
-{% for tag in sortedTags %}
-{% assign levels = tag | split:'-' %}
-  {% if levels[0] == '2' %}
-  <h4 id="{{ levels[1] | cgi_escape }}">{{ levels[1] }}</h3>
-  <ul class="taglist">
-  {% for post in site.categories[tag] %}
-    <li>
-          <time itemprop="dateCreated" datetime="{{post.date}}">
-                {{ post.date | date: "%b %d, %Y" }}</time> | <a href="{{site.baseurl}}{{post.url}}" rel="bookmark" title="Permanent Link to {{site.baseurl}}{{post.url}}">
-                {{post.title}}</a>
-    </li>
-  {% endfor %}
-   <li class="return"><a href="#top" title="return to top">return to top</a></li>
-  </ul>
-  {% endif %}
-{% endfor %}
-
-
+  <article class="containter mt-3">
+    <article role="article">
+      <header>
+           <ul class="tag-cloud">
+             {% capture site_categories %}{% for tag in site.categories %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+             {% assign sortedTags = site_categories | split:',' %}
+              {% for tag in sortedTags %}
+              {% assign levels = tag | split:'-' %}
+                {% if levels[0] == '2' %}
+                <a href="#{{ levels[1] | cgi_escape }}" class="badge badge-success">  {{ levels[1] }} {{ site.categories[tag].size }} </a>
+              {% endif %}
+              {% endfor %}
+          </ul>
+      </header>
+      <hr>
+      {% for tag in sortedTags %}
+      {% assign levels = tag | split:'-' %}
+        {% if levels[0] == '2' %}
+        <h4 id="{{ levels[1] | cgi_escape }}">{{ levels[1] }}</h3>
+        <ul class="taglist">
+        {% for post in site.categories[tag] %}
+          <li>
+                <time itemprop="dateCreated" datetime="{{post.date}}">
+                      {{ post.date | date: "%b %d, %Y" }}</time> | <a href="{{site.baseurl}}{{post.url}}" rel="bookmark" title="Permanent Link to {{site.baseurl}}{{post.url}}">
+                      {{post.title}}</a>
+          </li>
+        {% endfor %}
+         <li class="return"><a href="#top" title="return to top">return to top</a></li>
+        </ul>
+        {% endif %}
+      {% endfor %}
     </article>
-    </article>
+  </article>
 </main>
