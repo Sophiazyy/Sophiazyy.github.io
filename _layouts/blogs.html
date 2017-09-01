@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="col-lg-2 container mt-3">
+    {% include categories.html %}
+  </div>
+  <div class="col-md-10 container mt-3">
+    {{ content }}
+    <ul class="list-unstyled">
+      {% for post in site.posts %}
+        <li>
+
+          <div class="media">
+            <div class="d-flex mr-3">
+              <i class="fa fa-{{ post.icon}} fa-3x fa-fw" aria-hidden="true"></i>
+            </div>
+            <div class="media-body">
+              <h5 class="mt-0">  <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h5>
+              <p>{{post.excerpt}}</p>
+              {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+              <span style="padding-right: 3em"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: date_format }}</span>
+              <span style="padding-right: 3em"> <i class="fa fa-hashtag" aria-hidden="true"></i> {{ post.tags }}</span>
+              <span style="padding-right: 3em"> <i class="fa fa-comment" aria-hidden="true"></i>
+                {% if page.comments %}
+                  <a href="{{ post.url | relative_url }}#disqus_thread">0 Comments</a>
+                {% endif %}
+              </span>
+
+            </div>
+          </div>
+        </li>
+        <hr>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

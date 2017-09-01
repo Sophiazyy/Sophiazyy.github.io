@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {% include head.html %}
 
   <body>
 
-    {% include sidebar.html %}
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
+      {% include header.html %}
+      <div class="jumbotron jumbotron-fluid" style="margin-top:60px;">
         <div class="container">
-          <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
+        <h1 class="display-3">{{ page.title | escape }}</h1>
+          {% if page.date %}
+          <p class="lead">
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            <span style="padding-right: 3em"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: date_format }}</span>
+            <span style="padding-right: 3em"> <i class="fa fa-hashtag" aria-hidden="true"></i> {{ page.tags }}</span>
+            <span style="padding-right: 3em"> <i class="fa fa-comment" aria-hidden="true"></i>
+              {% if page.comments %}
+                <a href="{{ page.url }}#disqus_thread">0 Comments</a>
+              {% endif %}
+            </span>
+
+
+          </p>
+          {% else %}
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          {% endif %}
         </div>
       </div>
+<div class="container" style=" margin-bottom:100px">
+      <main class="page-content" aria-label="Content">
 
-      <div class="container content">
-        {{ content }}
-      </div>
-    </div>
-
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script>
+          {{ content }}
+        </div>
+      </main>
+  </div>
+   <script id="dsq-count-scr" src="//learning-to-learn-disqus.disqus.com/count.js" async></script>
   </body>
+
 </html>
