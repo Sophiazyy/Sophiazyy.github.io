@@ -14,7 +14,7 @@ minima:
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-tactile
 exclude:
   - Gemfile
   - Gemfile.lock
